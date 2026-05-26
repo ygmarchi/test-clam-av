@@ -1,0 +1,13 @@
+services:
+  clamav:
+    image: clamav/clamav:unstable_base
+    container_name: clamav
+    restart: unless-stopped
+    ports:
+      - "3310:3310"
+    volumes:
+      - "C:/Users/carlo.marchiori/.volumes/clamav:/var/lib/clamav"
+      - scandir:/scandir
+
+volumes:
+  scandir:
