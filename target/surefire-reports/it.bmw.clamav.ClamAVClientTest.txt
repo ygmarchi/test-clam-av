@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: it.bmw.clamav.ClamAVClientTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.805 s -- in it.bmw.clamav.ClamAVClientTest

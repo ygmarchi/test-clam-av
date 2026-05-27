@@ -1,3 +1,5 @@
+### Test manuale
+
 Lanciare
 
 ```cmd
@@ -53,3 +55,5 @@ Time: 17.127 sec (0 m 17 s)
 Start Date: 2026:05:27 07:45:16
 End Date:   2026:05:27 07:45:33
 ```
+### Test client java
+La classe `it.bmw.clamav.ClamAVClientTest` contiene un test che esegue le stesse operazioni, ma usando il client Java `io.sensesecure:clamav4j`. 
