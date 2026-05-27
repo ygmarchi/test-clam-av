@@ -56,4 +56,25 @@ Start Date: 2026:05:27 07:45:16
 End Date:   2026:05:27 07:45:33
 ```
 ### Test client java
-La classe `it.bmw.clamav.ClamAVClientTest` contiene un test che esegue le stesse operazioni, ma usando il client Java `io.sensesecure:clamav4j`. 
+La classe `it.bmw.clamav.ClamAVClientTest` contiene un test che esegue le stesse operazioni, ma usando il client Java `io.sensesecure:clamav4j`.
+
+### Aggiornamento del database
+L'aggiornamento del database delle signature avviene automaticamente nella modalità di default framite il demone `freshclam` che viene eseguito in background, come si può verificare sul container in esecuzione:
+
+```cmd
+docker exec -it clamav sh
+```
+```bash
+ps -ef
+```
+```txt
+/ # 
+PID   USER     TIME  COMMAND
+    1 root      0:00 {init} /sbin/tini /bin/sh /init
+    7 root      0:00 tail -f /dev/null
+   17 clamav    0:00 freshclam --checks=1 --daemon --foreground --stdout --user=clamav
+   19 clamav    0:25 clamd --foreground
+ 1059 root      0:00 sh
+ 2155 root      0:00 sh
+ 2161 root      0:00 ps -ef
+``` 
